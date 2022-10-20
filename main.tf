@@ -34,7 +34,7 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
 
     provisioner "remote-exec" {
     inline = [        
-            "powershell C:\\Users\\test.ps1 -p1 'c:\\temp\\abc' -p2 'c:\\temp\\xyz'"
+            "powershell.exe C:\\Users\\test.ps1 -p1 'c:\\temp\\abc' -p2 'c:\\temp\\xyz'"
       ]
   }
 
