@@ -10,19 +10,8 @@ param(
 
 
 
-[String] $p3,
+[String] $p3
 
-
-
-[String] $a = "c:\temp\abc",
-
-
-
-[String] $b = "c:\temp\xyz",
-
-
-
-[String] $c = "c:\temp\def"
 
 
 
