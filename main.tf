@@ -1,3 +1,9 @@
+data "template_file" "windows_script" {
+  template = "${file("${path.module}/test.ps1")}"
+  vars {
+    var1 = "${var.var1}"
+  }
+}
 resource "null_resource" "PowerShellScriptRunFirstTime" {
 
     connection {
@@ -17,8 +23,8 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
 
     // To copy all the contents inside a folder
   provisioner "file" {
-      source = "test.ps1"
-      destination = "C:\\"
+      source = "${data.template_file.windows_script.rendered}"
+      destination = "C:/"
   }
 
 
