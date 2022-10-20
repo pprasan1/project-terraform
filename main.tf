@@ -18,7 +18,7 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
     // To copy all the contents inside a folder
   provisioner "file" {
       source = "test.ps1"
-      destination = "C:\\temp\\"
+      destination = "C:\\"
   }
 
 
@@ -26,11 +26,11 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
   #   provisioner "file" {
   #     source = "C:\\TEMP\\test.ps1"
   #     destination = "C:\\temp\\"
-  # }
+  #}
 
     provisioner "remote-exec" {
     inline = [        
-        "powershell C:\\temp\\test.ps1 -p1 'c:\\temp\\abc' -p2 'c:\\temp\\xyz'"
+            "powershell C:\\test.ps1 -p1 'c:\\temp\\abc' -p2 'c:\\temp\\xyz'"
       ]
   }
 
