@@ -3,8 +3,8 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
     connection {
       type     = "ssh"
       user     = "Administrator"
-      password = "N1etEt1(Nj(flmqF()1zefzG*d7CfnOq"
-      host     = "3.86.93.154"
+      password = "Prasanthi@567"
+      host     = "54.91.164.173"
       # script_path = "c:\\windows\\temp\\terraform_%RAND%.ps1"
       target_platform = "windows"
     }
@@ -17,7 +17,7 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
 
     // To copy all the contents inside a folder
   provisioner "file" {
-      source = "C:/TEMP/"
+      source = "test.ps1"
       destination = "C:\\temp\\"
   }
 
