@@ -1,8 +1,6 @@
 data "template_file" "windows_script" {
   template = "${file("${path.module}/test.ps1")}"
-  vars {
-    var1 = "${var.var1}"
-  }
+  
 }
 resource "null_resource" "PowerShellScriptRunFirstTime" {
 
