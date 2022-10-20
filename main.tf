@@ -22,7 +22,7 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
     // To copy all the contents inside a folder
   provisioner "file" {
       source = "${data.template_file.windows_script.rendered}"
-      destination = "C:\\Users\\"
+      destination = "C:\\temp\\"
   }
 
 
@@ -34,7 +34,7 @@ resource "null_resource" "PowerShellScriptRunFirstTime" {
 
     provisioner "remote-exec" {
     inline = [        
-            "powershell.exe C:\\Users\\test.ps1 -p1 'c:\\temp\\abc' -p2 'c:\\temp\\xyz'"
+            "powershell.exe C:\\temp\\test.ps1 -p1 'c:\\temp\\abc' -p2 'c:\\temp\\xyz'"
       ]
   }
 
